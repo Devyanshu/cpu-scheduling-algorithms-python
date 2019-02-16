@@ -17,6 +17,13 @@ def iExit():
         return
 
 
+def go():
+    f = open('fl.txt', 'w')
+    selection = str(v.get())
+    f.write(selection)
+    f.close()
+
+
 v = IntVar()
 f1 = Frame(root, height=10, width=10, bd=4, relief="ridge")
 f1.pack(side=TOP)
@@ -41,8 +48,8 @@ rr_rbtn = Radiobutton(f1, text="Round Robin", padx=20,
                       variable=v, value=6).pack(anchor=W)
 
 btnGo = Button(f2, text="Go", padx=6, pady=6, bd=2, fg="black", font=(
-    'arial', 12, 'bold'), width=14, height=1, command=iExit).grid(row=0,
-                                                                  column=0)
+    'arial', 12, 'bold'), width=14, height=1, command=go).grid(row=0,
+                                                               column=0)
 btnExit = Button(f2, text="Exit", padx=6, pady=6, bd=2, fg="black", font=(
     'arial', 12, 'bold'), width=14, height=1, command=iExit).grid(row=0,
                                                                   column=1)
