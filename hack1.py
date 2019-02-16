@@ -37,10 +37,8 @@ pp_rbtn = Radiobutton(f1, text="Priority(Preemptive)",
                       padx=20, variable=v, value=4).pack(anchor=W)
 pnp_rbtn = Radiobutton(f1, text="Priority(Non-Preemptive)",
                        padx=20, variable=v, value=5).pack(anchor=W)
-mul_rbtn = Radiobutton(f1, text="Multilevel", padx=20,
-                       variable=v, value=6).pack(anchor=W)
 rr_rbtn = Radiobutton(f1, text="Round Robin", padx=20,
-                      variable=v, value=7).pack(anchor=W)
+                      variable=v, value=6).pack(anchor=W)
 
 btnGo = Button(f2, text="Go", padx=6, pady=6, bd=2, fg="black", font=(
     'arial', 12, 'bold'), width=14, height=1, command=iExit).grid(row=0,
