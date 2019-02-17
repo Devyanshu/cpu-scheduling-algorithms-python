@@ -152,7 +152,7 @@ data = [
     {'id': 'P4',
      'bt': 1,
      'at': 8,
-     'pr': 2
+     'pr': 0
      }
 ]
 
@@ -186,13 +186,11 @@ def priority_preemptive(data):
         indx += 1
     prior.sort(reverse=True)
     while not all_done(prior):
+        print(data)
         index, has_arrived = find_max_prior_arrived(curr_time, prior)
         if has_arrived:
             curr_time += 1
             prior, is_done = reduce_bt(index, prior)
             if is_done:
                 data[index]['ct'] = curr_time
-    print(data)
-
-
-priority_preemptive(data)
+    return data
