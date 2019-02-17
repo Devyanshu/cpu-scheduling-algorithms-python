@@ -1,6 +1,3 @@
-# import plotly.graph_objs as go
-# import plotly
-
 import json
 data = []
 
@@ -16,7 +13,7 @@ def generate_gantt():
     tm = "0"
     for i in lst:
         cht += i[0]//2*'_' + i[1] + i[0]//2*'_' + '|'
-        tm += " "*(i[0]) + str(i[0])
+        tm += " "*(i[0]+1) + str(i[0])
 
     print(cht)
     print(tm)

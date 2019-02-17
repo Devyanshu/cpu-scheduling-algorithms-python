@@ -19,7 +19,6 @@ def main():
     txt = txt.strip('\n')
     if txt == '6':
         tq = next(f)
-        print(tq)
     f.close()
     if txt == '6':
         res = algos[txt](data, int(tq))

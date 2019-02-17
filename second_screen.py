@@ -123,8 +123,9 @@ def sec_main():
     Label(frame, text="").grid(row=2, column=1)
     Label(frame, text="").grid(row=3, column=1)
     # Label(frame, text="").grid(row=4, column=1)
-    generate = Button(frame, text="Generate", padx=6, pady=6, fg="black", font=(
-        'arial', 12, 'bold'), width=16, height=1, command=table_win).grid(row=5, column=1)
+    generate = Button(frame, text="Generate", padx=6, pady=6, fg="black",
+                      font=('arial', 12, 'bold'), width=16, height=1,
+                      command=table_win).grid(row=5, column=1)
     exit_button = Button(frame, text="Exit", padx=6, pady=6, fg="black", font=(
         'arial', 12, 'bold'), width=16, height=1, command=root.destroy).grid(row=5, column=2)
 

@@ -34,7 +34,8 @@ def main():
     f2 = Frame(root, height=10, width=100, bd=4, relief="raise")
     f2.pack(side=RIGHT)
 
-    Label(f1, font=('arial', 15, 'bold'), text="Choose a scheduling algorithm:",
+    Label(f1, font=('arial', 15, 'bold'),
+          text="Choose a scheduling algorithm:",
           justify=LEFT, padx=20).pack(side=LEFT)
 
     fcfs_rbtn = Radiobutton(f1, text="FCFS", padx=20,

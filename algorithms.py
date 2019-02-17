@@ -74,7 +74,6 @@ def shortest_job_first(data):
                 curr_time += data[val[2]]['bt']
                 data[val[2]]['ct'] = curr_time
                 sjf.remove(val)
-                print(val[2], data[val[2]]['ct'])
     return data
 
 

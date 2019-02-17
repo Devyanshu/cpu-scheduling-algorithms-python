@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter import messagebox
-from PIL import ImageTk, Image
 import connector
 import gen_chart
 
@@ -37,9 +36,9 @@ def main():
 # Label(f2, text=t1).grid(row=2, column=1)
 # Label(f2, text=t2).grid(row=3, column=1)
 
-    btnchart = Button(f2, text="Gantt Chart", padx=6, pady=6, bd=2, fg="black", font=(
-        'arial', 12, 'bold'), width=14, height=1,
-        command=gen_chart.generate_gantt).grid(row=0, column=0)
+    btnchart = Button(f2, text="Gantt Chart", padx=6, pady=6, bd=2, fg="black",
+                      font=('arial', 12, 'bold'), width=14, height=1,
+                      command=gen_chart.generate_gantt).grid(row=0, column=0)
 
     root.mainloop()
 
