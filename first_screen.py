@@ -22,6 +22,7 @@ def go():
     f = open('fl.txt', 'w')
     selection = str(v.get())
     f.write(selection)
+    f.write('\n0')
     f.close()
     root.destroy()
     second_screen.sec_main()

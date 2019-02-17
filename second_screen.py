@@ -76,6 +76,9 @@ def sec_main():
         txt = next(f)
         txt = int(txt.strip('\n'))
         f.close()
+        if txt == 6:
+            f = open('fl.txt', 'a')
+            f.write('\n'+prcs1.get()+'\n')
         global newwin
         processes = int(prcs.get())
         newwin = Toplevel(root)
@@ -107,6 +110,7 @@ def sec_main():
     txt = next(f)
     txt = int(txt.strip('\n'))
     f.close()
+    prcs1 = None
     if txt == 6:
         Label(frame, text="Enter Time Quantum").grid(row=1, column=1)
         prcs1 = Entry(frame, text="")
@@ -117,9 +121,9 @@ def sec_main():
     Label(frame, text="").grid(row=2, column=1)
     Label(frame, text="").grid(row=3, column=1)
     #Label(frame, text="").grid(row=4, column=1)
-    generate = Button(frame, text="Generate",padx=6, pady=6, fg="black", font=(
+    generate = Button(frame, text="Generate", padx=6, pady=6, fg="black", font=(
         'arial', 12, 'bold'), width=16, height=1, command=table_win).grid(row=5, column=1)
-    exit_button = Button(frame, text="Exit",padx=6, pady=6, fg="black", font=(
+    exit_button = Button(frame, text="Exit", padx=6, pady=6, fg="black", font=(
         'arial', 12, 'bold'), width=16, height=1, command=root.destroy).grid(row=5, column=2)
 
     root.mainloop()

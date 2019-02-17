@@ -186,7 +186,6 @@ def priority_preemptive(data):
         indx += 1
     prior.sort(reverse=True)
     while not all_done(prior):
-        print(data)
         index, has_arrived = find_max_prior_arrived(curr_time, prior)
         if has_arrived:
             curr_time += 1

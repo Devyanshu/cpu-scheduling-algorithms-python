@@ -17,7 +17,13 @@ def main():
     f = open('fl.txt')
     txt = next(f)
     txt = txt.strip('\n')
+    tq = next(f)
     f.close()
-    res = algos[txt](data)
+    print(tq)
+    if txt == '6':
+        res = algos[txt](data, int(tq))
+    else:
+        res = algos[txt](data)
     avg = avg_wt_tat(res)
+
     return avg
