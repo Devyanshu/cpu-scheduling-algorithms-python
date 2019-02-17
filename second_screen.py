@@ -64,7 +64,9 @@ def sec_main():
             data_f = open('data.json', 'w')
             data_f.write(json.dumps(data_lst))
             data_f.close()
+            root.destroy()
             third_screen.main()
+
             return
 
     def reset():
