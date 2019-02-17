@@ -1,11 +1,10 @@
 # import plotly.graph_objs as go
 # import plotly
-'''
+
 import json
 data = []
-with open('data.json', "r") as read_file:
-    data = json.load(read_file)
-print(data)'''
+
+'''
 data = [
     {'id': 'P1',
         'bt': 4,
@@ -26,9 +25,13 @@ data = [
         'ct': 5
      }
 ]
+'''
 
 
-def generate_gantt(data):
+def generate_gantt():
+    with open('data.json', "r") as read_file:
+        data = json.load(read_file)
+    print(data)
     lst = []
     for dct in data:
         lst.append([dct['ct'], dct['id']])
@@ -37,10 +40,10 @@ def generate_gantt(data):
     tm = "0"
     for i in lst:
         cht += i[0]//2*'_' + i[1] + i[0]//2*'_' + '|'
-        tm += " "*(i[0]+1) + str(i[0])
+        tm += " "*(i[0]) + str(i[0])
 
     print(cht)
     print(tm)
 
 
-generate_gantt(data)
+# generate_gantt(data)

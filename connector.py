@@ -26,5 +26,7 @@ def main():
     else:
         res = algos[txt](data)
     avg = avg_wt_tat(res)
-
+    data_f = open('data.json', 'w')
+    data_f.write(json.dumps(res))
+    data_f.close()
     return avg

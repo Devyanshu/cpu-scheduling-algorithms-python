@@ -14,13 +14,13 @@ def sec_main():
     root = Tk()
     root.title('CPU Scheduling')
 
-##    x = (root.winfo_screenwidth() - root.winfo_reqwidth()) / 2
-##    y = (root.winfo_screenheight() - root.winfo_reqheight()) / 2
-##    root.geometry("+%d+%d" % (x, y))
+# x = (root.winfo_screenwidth() - root.winfo_reqwidth()) / 2
+# y = (root.winfo_screenheight() - root.winfo_reqheight()) / 2
+# root.geometry("+%d+%d" % (x, y))
     root.geometry('330x130+550+200')
     root.resizable(0, 0)
     frame = Frame(root)
-    #f=Frame(root, height=50, bd=8, relief="raise")
+    # f=Frame(root, height=50, bd=8, relief="raise")
     frame.grid(row=0, column=0)
 
     def submit():
@@ -120,7 +120,7 @@ def sec_main():
 
     Label(frame, text="").grid(row=2, column=1)
     Label(frame, text="").grid(row=3, column=1)
-    #Label(frame, text="").grid(row=4, column=1)
+    # Label(frame, text="").grid(row=4, column=1)
     generate = Button(frame, text="Generate", padx=6, pady=6, fg="black", font=(
         'arial', 12, 'bold'), width=16, height=1, command=table_win).grid(row=5, column=1)
     exit_button = Button(frame, text="Exit", padx=6, pady=6, fg="black", font=(
@@ -130,4 +130,5 @@ def sec_main():
 
 
 if __name__ == "__main__":
+    print("Run cpu_sheduler.py")
     sec_main()

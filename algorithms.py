@@ -26,6 +26,12 @@ def first_come_first_serve(data):
     return data
 
 
+data = [{'id': '1', 'at': 0, 'bt': 3},
+        {'id': '2', 'at': 1, 'bt': 6}, {
+    'id': '3', 'at': 4, 'bt': 4},
+    {'id': '4', 'at': 6, 'bt': 2}]
+
+
 def round_robin(data, tq):
     rr = []
     indx = 0
@@ -37,7 +43,7 @@ def round_robin(data, tq):
     while flag:
         for i in range(len(rr)):
             bt = rr[i][1]
-            if bt != 0 and rr[i][0] <= curr_time:
+            if bt != 0 and rr[i][0] < curr_time or curr_time == 0:
                 if bt > tq:
                     rr[i][1] -= tq
                     curr_time += tq
@@ -131,30 +137,6 @@ def priority_non_preemptive(data):
                 data[val[-1]]['ct'] = curr_time
                 prior.remove(val)
     return data
-
-
-data = [
-    {'id': 'P1',
-        'bt': 4,
-        'at': 0,
-        'pr': 3
-     },
-    {'id': 'P2',
-        'bt': 9,
-        'at': 3,
-        'pr': 2
-     },
-    {'id': 'P3',
-        'bt': 7,
-        'at': 5,
-        'pr': 1
-     },
-    {'id': 'P4',
-     'bt': 1,
-     'at': 8,
-     'pr': 0
-     }
-]
 
 
 def priority_preemptive(data):
