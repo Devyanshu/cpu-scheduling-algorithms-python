@@ -4,29 +4,6 @@
 import json
 data = []
 
-'''
-data = [
-    {'id': 'P1',
-        'bt': 4,
-        'at': 0,
-        'pr': 3,
-        'ct': 3
-     },
-    {'id': 'P2',
-        'bt': 9,
-        'at': 3,
-        'pr': 2,
-        'ct': 8
-     },
-    {'id': 'P3',
-        'bt': 7,
-        'at': 5,
-        'pr': 1,
-        'ct': 5
-     }
-]
-'''
-
 
 def generate_gantt():
     with open('data.json', "r") as read_file:

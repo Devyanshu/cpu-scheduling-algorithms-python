@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk, Image
 import connector
-import plotly
 import gen_chart
 
 
