@@ -1,7 +1,7 @@
 
 from tkinter import *
 root = Tk()
-root.title('Main Window')
+root.title('CPU Scheduling')
 
 
 x = (root.winfo_screenwidth() - root.winfo_reqwidth()) / 2
@@ -15,13 +15,44 @@ buttons = []
 
 
 def submit():
+    f = open('fl.txt')
+    txt = next(f)
+    txt = int(txt.strip('\n'))
+    f.close()
+    flag = False
+    if txt == 4 or txt == 5:
+        flag = True
     lst = []
-    for i in buttons:
-        lst.append(i[0].get())
+    dct = {}
+    if flag:
+        for i in range(0, len(buttons), 4):
+            dct['id'] = buttons[i][0].get()
+            dct['at'] = int(buttons[i+1][0].get())
+            dct['bt'] = int(buttons[i+2][0].get())
+            dct['pr'] = int(buttons[i+3][0].get())
+            lst.append(dct)
+            dct = {}
+    else:
+        for i in range(0, len(buttons), 3):
+            dct['id'] = buttons[i][0].get()
+            dct['at'] = int(buttons[i+1][0].get())
+            dct['bt'] = int(buttons[i+2][0].get())
+            lst.append(dct)
+            dct = {}
     print(lst)
 
 
-def table_win():  # new window definition
+def reset():
+    for i in range(len(buttons)):
+        buttons[i][0].delete(0, END)
+
+
+def table_win():
+    f = open('fl.txt')
+    txt = next(f)
+    txt = int(txt.strip('\n'))
+    f.close()
+
     processes = int(prcs.get())
     newwin = Toplevel(root)
     b = Label(newwin, text="Process")
@@ -30,11 +61,13 @@ def table_win():  # new window definition
     b.grid(row=0, column=1)
     b = Label(newwin, text="Burst Time")
     b.grid(row=0, column=2)
-    '''
-    b = Label(newwin, text="Priority")
-    b.grid(row=0, column=3)'''
+    column = 3
+    if txt == 4 or txt == 5:
+        column = 4
+        b = Label(newwin, text="Priority")
+        b.grid(row=0, column=3)
     for i in range(1, processes+1):  # Rows
-        for j in range(3):
+        for j in range(column):
             tmp = [Entry(newwin, text=""), i, j]
             buttons.append(tmp)
     for i in buttons:
@@ -42,15 +75,21 @@ def table_win():  # new window definition
 
     sub = Button(newwin, text="Submit", command=submit).grid(
         row=processes+2, column=1)
-    Reset = Button(newwin, text="Reset").grid(row=processes+3, column=1)
+    Reset = Button(newwin, text="Reset", command=reset).grid(
+        row=processes+3, column=1)
 
 
 Label(frame, text="Enter Processes").grid(row=0, column=1)
-Label(frame, text="Enter Time Quantum").grid(row=1, column=1)
-prcs1 = Entry(frame, text="")
+f = open('fl.txt')
+txt = next(f)
+txt = int(txt.strip('\n'))
+f.close()
+if txt == 6:
+    Label(frame, text="Enter Time Quantum").grid(row=1, column=1)
+    prcs1 = Entry(frame, text="")
+    prcs1.grid(row=1, column=2)
 prcs = Entry(frame, text="")
 prcs.grid(row=0, column=2)
-prcs1.grid(row=1, column=2)
 
 
 Label(frame, text="").grid(row=2, column=1)
