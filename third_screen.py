@@ -2,12 +2,15 @@ from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk, Image
 import connector
+import plotly
 
+def gchart():
+    print('yes')
 
 def main():
     root = Tk()
     root.title("CPU Scheduling")
-    root.geometry('600x550+550+200')
+    root.geometry('500x250+550+200')
     root.resizable(0, 0)
     Tops = Frame(root, height=50, bd=8, relief="flat")
     Tops.pack(side=TOP)
@@ -24,18 +27,15 @@ def main():
     Label(f1, font=('arial', 15, 'bold'),
           text=av_wt, bd=5).grid(row=1, column=0)
 
-    f2 = Frame(root, height=10, width=100, bd=4, relief="ridge")
+    f2 = Frame(root, height=10, width=100, bd=4, relief="raise")
     f2.pack(side=TOP)
 
-    Label(f2, font=('arial', 20, 'bold'),
-          text=" Gantt Chart ", bd=5).grid(row=0, column=0)
+##    Label(f2, font=('arial', 20, 'bold'),
+##          text=" Gantt Chart ", bd=5).grid(row=0, column=0)
 
-    img = Image.open("adorable-animal-close-up-148182 copy.jpg")
-    img = img.resize((600, 250), Image.ANTIALIAS)
-    img = ImageTk.PhotoImage(img)
-    panel = Label(root, image=img)
-    panel.image = img
-    panel.pack(side="bottom")
+    btnchart = Button(f2, text="Gantt Chart", padx=6, pady=6, bd=2, fg="black", font=(
+    'arial', 12, 'bold'), width=14, height=1, command=gchart).grid(row=0,
+                                                               column=0)
 
     root.mainloop()
 
