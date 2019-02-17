@@ -30,7 +30,6 @@ img = img.resize((600, 250), Image.ANTIALIAS)
 img = ImageTk.PhotoImage(img)
 panel = Label(root, image=img)
 panel.image = img
-panel.pack(side = "bottom")
+panel.pack(side="bottom")
 
 root.mainloop()
-

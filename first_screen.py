@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import second_screen
 root = Tk()
 root.title("CPU Scheduling")
 root.geometry('500x350+550+200')
@@ -22,6 +23,8 @@ def go():
     selection = str(v.get())
     f.write(selection)
     f.close()
+    root.destroy()
+    second_screen.main()
 
 
 v = IntVar()
