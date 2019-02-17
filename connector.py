@@ -17,9 +17,10 @@ def main():
     f = open('fl.txt')
     txt = next(f)
     txt = txt.strip('\n')
-    tq = next(f)
+    if txt == '6':
+        tq = next(f)
+        print(tq)
     f.close()
-    print(tq)
     if txt == '6':
         res = algos[txt](data, int(tq))
     else:
