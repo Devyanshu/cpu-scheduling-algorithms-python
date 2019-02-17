@@ -4,8 +4,6 @@ from PIL import ImageTk, Image
 import connector
 import plotly
 import gen_chart
-t1 = '|_P1_|__P3__|____P2____|'
-t2 = '0    3      5          8'
 
 
 def gchart():
@@ -45,8 +43,6 @@ def main():
         command=gen_chart.generate_gantt).grid(row=0, column=0)
 
     root.mainloop()
-    print(t1)
-    print(t2)
 
 
 if __name__ == "__main__":

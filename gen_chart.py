@@ -31,7 +31,6 @@ data = [
 def generate_gantt():
     with open('data.json', "r") as read_file:
         data = json.load(read_file)
-    print(data)
     lst = []
     for dct in data:
         lst.append([dct['ct'], dct['id']])
