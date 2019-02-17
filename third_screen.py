@@ -5,7 +5,7 @@ import connector
 import plotly
 
 t1 = '|_P1_|__P3__|____P2____|'
-t2 = '0    3      5         8'
+t2 = '0    3      5          8'
 
 
 def gchart():
@@ -35,17 +35,18 @@ def main():
     f2 = Frame(root, height=10, width=100, bd=4, relief="flat")
     f2.pack(side=TOP)
 
-    Label(f1, font=('arial', 20, 'bold'),
-          text="    Gantt Chart   ", bd=5).grid(row=3, column=0)
-    Label(f2, text=t1).grid(row=2, column=1)
-    Label(f2, text=t2).grid(row=3, column=1)
+##    Label(f1, font=('arial', 20, 'bold'),
+##          text="    Gantt Chart   ", bd=5).grid(row=3, column=0)
+##    Label(f2, text=t1).grid(row=2, column=1)
+##    Label(f2, text=t2).grid(row=3, column=1)
 
-# btnchart = Button(f2, text="Gantt Chart", padx=6, pady=6, bd=2, fg="black", font=(
-# 'arial', 12, 'bold'), width=14, height=1, command=gchart).grid(row=0,
-# column=0)
+    btnchart = Button(f2, text="Gantt Chart", padx=6, pady=6, bd=2, fg="black", font=(
+     'arial', 12, 'bold'), width=14, height=1, command=root.destroy).grid(row=0,
+     column=0)
 
     root.mainloop()
-
+    print(t1)
+    print(t2)
 
 if __name__ == "__main__":
     main()
