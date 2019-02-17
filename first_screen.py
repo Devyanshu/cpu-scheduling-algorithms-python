@@ -24,7 +24,7 @@ def go():
     f.write(selection)
     f.close()
     root.destroy()
-    second_screen.main()
+    second_screen.sec_main()
 
 
 v = IntVar()

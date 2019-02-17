@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
+import third_screen
+import json
 
 prcs = None
 buttons = []
@@ -8,7 +10,7 @@ newwin = None
 data_lst = []
 
 
-def main():
+def sec_main():
     root = Tk()
     root.title('CPU Scheduling')
 
@@ -58,7 +60,11 @@ def main():
             reset()
         else:
             print(data_lst, valid[0])
-            newwin.destroy()
+            # newwin.destroy()
+            data_f = open('data.json', 'w')
+            data_f.write(json.dumps(data_lst))
+            data_f.close()
+            third_screen.main()
             return
 
     def reset():
@@ -120,4 +126,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sec_main()
