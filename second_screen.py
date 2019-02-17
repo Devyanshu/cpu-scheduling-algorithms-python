@@ -61,8 +61,6 @@ def sec_main():
             messagebox.showinfo("Input Error", "Please enter all the values")
             reset()
         else:
-            print(data_lst, valid[0])
-            # newwin.destroy()
             data_f = open('data.json', 'w')
             data_f.write(json.dumps(data_lst))
             data_f.close()
